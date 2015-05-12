@@ -113,7 +113,44 @@
 
                 <!-- What React isn’t / Misconception -->
 
+                <section>
+                    <h2>Misconception (What React isn't)</h2>
+
+                    <ul>
+                        <li class="fragment">Its a front-end framework</li>
+                        <li class="fragment">Its an alternative to Angular, Ember, Backbone</li>
+                        <li class="fragment">Its template library (like: handlebars.js, mustache.js)</li>
+                    </ul>
+                </section>
+
                 <!-- Flux -->
+
+                <section>
+                    <section>
+                        <h2>How do I structure my app?</h2>
+
+                        <div class="fragment">
+                            <h3>Flux (Created by Facebook)</h3>
+                            <p>An application architecture based on a unidirectional data flow.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Event and data flow</h2>
+                        <img src="img/flux.png" />
+                    </section>
+
+                    <section>
+                        <h2>Dispatcher</h2>
+                        <ul>
+                            <li class="fragment">Pub sub system using Node’s Event Emitter</li>
+                            <li class="fragment">Receives actions from dispatchers</li>
+                            <li class="fragment">Broadcasts the payload to ALL of its registered callbacks (Stores)</li>
+                            <li class="fragment">Has no knowledge about any stores</li>
+                            <li class="fragment">There is only ever one Dispatcher, and it acts as the central hub within your application</li>
+                        </ul>
+                    </section>
+                </section>
 
                 <!-- Virtual DOM (HOW AND WHY) -->
 
