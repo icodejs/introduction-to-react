@@ -50,7 +50,7 @@
                 <section>
                     <section>
                         <h2>What is React?</h2>
-                        <p class="fragment">Its a Javascript Library for building User Interfaces created by Facebook</p>
+                        <p class="fragment">Its a JavaScript Library for building User Interfaces created by Facebook</p>
                     </section>
 
                     <section>
@@ -150,11 +150,66 @@
                             <li class="fragment">There is only ever one Dispatcher, and it acts as the central hub within your application</li>
                         </ul>
                     </section>
+
+                    <section>
+                        <h2>Actions (Not DOM events)</h2>
+                        <ul>
+                            <li class="fragment">Not elaborate setters</li>
+                            <li class="fragment">Represent mutations in you application state</li>
+                            <li class="fragment">Think of actions as Newspapers, reporting on something that happened in the world / App</li>
+                            <li class="fragment">E.g. Like a new feed added to feed page</li>
+                            <li class="fragment">Follow another user</li>
+                            <li class="fragment">Post a comment</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Stores (Model like but not)</h2>
+                        <ul>
+                            <li class="fragment">Read-only</li>
+                            <li class="fragment">Self contained universe</li>
+                            <li class="fragment">Updated as a result of actions</li>
+                            <!-- <li class="fragment">Stores instead of models</li> -->
+                            <li class="fragment">Register callbacks with the app dispatcher</li>
+                            <li class="fragment">Data is updated via the app dispatcher events not setters</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Views</h2>
+                        <ul>
+                            <li class="fragment">This is where React kicks in</li>
+                            <li class="fragment">Controller views listen and react to changes within stores</li>
+                            <li class="fragment">Update their state and re-render themselves and their child views</li>
+                            <li class="fragment">Respond to UI interaction and fire actions that can mutate stores</li>
+                        </ul>
+                    </section>
                 </section>
 
                 <!-- Virtual DOM (HOW AND WHY) -->
 
+                <section>
+                    <h2>Virtual DOM (HOW AND WHY)</h2>
+
+                    <ul>
+                        <li class="fragment">Incredibly fast</li>
+                        <li class="fragment">It utilises an in-memory DOM</li>
+                        <li class="fragment">Which means a copy of your DOM is kept in memory and any changes are made in memory and updated in the DOM when needed</li>
+                        <li class="fragment">Events are normalised across browsers and automatically delegated</li>
+                    </ul>
+                </section>
+
                 <!-- JSX (Inline HTML - PASS ME THE SICK BUCKET!) -->
+
+                <section>
+                    <h2>JSX (In-line HTML/XML - WTF!)</h2>
+
+                    <ul>
+                        <li class="fragment">Components can be written in pure JavaScript or what Facebook calls JSX, a JavaScript XML syntax</li>
+                        <li class="fragment">Allows you to write HTML inside of JavaScript without having to wrap it in quotes</li>
+                        <li class="fragment">We've all been conditioned to separate our functionality from our view, but if you think about it, they are actually intrinsic tied to one another</li>
+                    </ul>
+                </section>
 
                 <!-- Components -->
 
