@@ -242,7 +242,43 @@
                 <!-- How do I traverse the DOM (JQUERY.. NO!) -->
 
                 <section>
-                    <h2>How do I traverse the DOM / Virtual DOM</h2>
+                    <section>
+                        <h2>How do I traverse the DOM / Virtual DOM</h2>
+
+                        <p class="fragment">React encourages the creation of small self-contained components. If you're attempting to traverse the DOM, outside of your component, you're probably doing something wrong!</p>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>
+                                HTML elements within a component can be accessed via ref attributes:
+                                <pre><code data-trim contenteditable>
+ <input type="text" ref="myTextInput" />
+                                </code></pre>
+                            </li>
+                            <li class="fragment">
+                                Actual DOM nodes are accessed using the React findDOMNode method:
+                                <pre><code data-trim contenteditable>
+var domNode = React.findDOMNode(this.refs.myTextInput);
+                                </code></pre>
+                            </li>
+                            <li class="fragment">
+                                Once the component has loaded into the DOM, jQuery can be used as normal:
+                                <pre><code data-trim contenteditable>
+componentDidMount() {
+    var $ = require('jquery');
+    var $component = $(React.findDOMNode(this));
+
+    var $body = $component.closest('body');
+    var $input = $component.find('input.myTextInput');
+
+    $body.css({ backgroundColor: '#000' });
+    $input.fadeOut(2000);
+}
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
                 </section>
 
                 <!-- Browser compatibility -->
