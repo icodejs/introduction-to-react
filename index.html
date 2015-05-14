@@ -99,15 +99,15 @@
                     </section>
 
                     <section>
-                        <p><strong>Model:</strong> Model is where the application’s data objects are stored. The model doesn’t know anything about views and controllers.</p>
+                        <p><strong>Model:</strong> Is where the application’s data objects are stored. The model doesn’t know anything about views and controllers.</p>
                     </section>
 
                     <section>
-                        <p><strong>View:</strong> View is what's presented to the users and how users interact with the app.</p>
+                        <p><strong>View:</strong> Is what's presented to the users and is how users interact with the app.</p>
                     </section>
 
                     <section>
-                        <p><strong>Controller:</strong> The controller is the decision maker and the glue between the model and view. The controller updates the view when the model changes. It also adds event listeners to the view and updates the model when the user manipulates the view.</p>
+                        <p><strong>Controller:</strong> Is the decision maker and the glue between the model and view. The controller updates the view when the model changes. It also adds event listeners to the view and updates the model when the user manipulates the view.</p>
                     </section>
                 </section>
 
@@ -118,8 +118,8 @@
 
                     <ul>
                         <li class="fragment">Not a front-end framework</li>
-                        <li class="fragment">Not an alternative to Angular, Ember, Backbone</li>
-                        <li class="fragment">Not template library (like: handlebars.js, mustache.js)</li>
+                        <li class="fragment">Not a straight alternative to Angular, Ember, Backbone</li>
+                        <li class="fragment">Not a template library (like: handlebars.js, mustache.js)</li>
                     </ul>
                 </section>
 
@@ -144,8 +144,7 @@
                         <h2>Dispatcher</h2>
                         <ul>
                             <li class="fragment">Pub sub system using Node’s Event Emitter</li>
-                            <li class="fragment">Receives actions from dispatchers</li>
-                            <li class="fragment">Broadcasts the payload to ALL of its registered callbacks (Stores)</li>
+                            <li class="fragment">Broadcasts its payload to ALL of its registered callbacks (Stores)</li>
                             <li class="fragment">Has no knowledge about any stores</li>
                             <li class="fragment">There is only ever one Dispatcher, and it acts as the central hub within your application</li>
                         </ul>
