@@ -131,7 +131,7 @@
 
                         <div class="fragment">
                             <h3>Flux (Created by Facebook)</h3>
-                            <p>An application architecture based on a unidirectional data flow.</p>
+                            <p>An application architecture based on unidirectional data flow.</p>
                         </div>
                     </section>
 
@@ -157,31 +157,38 @@
                             <li class="fragment">Not elaborate setters</li>
                             <li class="fragment">Represent mutations in you application state</li>
                             <li class="fragment">Think of actions as Newspapers, reporting on something that happened in the world / App</li>
-                            <li class="fragment">E.g. Like a new feed added to feed page</li>
-                            <li class="fragment">Follow another user</li>
-                            <li class="fragment">Post a comment</li>
+                            <li class="fragment">E.g.
+
+                            <ul>
+                                <li class="fragment">A new feed added to feed page</li>
+                                <li class="fragment">Follow another user</li>
+                                <li class="fragment">Post a comment</li>
+                            </ul>
+
+                            </li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2>Stores (Model like but not)</h2>
+                        <h2>Stores (Model like... but not)</h2>
                         <ul>
                             <li class="fragment">Read-only</li>
                             <li class="fragment">Self contained universe</li>
                             <li class="fragment">Updated as a result of actions</li>
                             <!-- <li class="fragment">Stores instead of models</li> -->
-                            <li class="fragment">Register callbacks with the app dispatcher</li>
-                            <li class="fragment">Data is updated via the app dispatcher events not setters</li>
+                            <li class="fragment">Register callbacks with the Dispatcher</li>
+                            <li class="fragment">State is updated via the Dispatcher events, <strong>NOT SETTERS</strong></li>
+                            <li class="fragment">Events are emitted when internal data changes</li>
                         </ul>
                     </section>
 
                     <section>
                         <h2>Views</h2>
                         <ul>
-                            <li class="fragment">This is where React kicks in</li>
-                            <li class="fragment">Controller views listen and react to changes within stores</li>
-                            <li class="fragment">Update their state and re-render themselves and their child views</li>
-                            <li class="fragment">Respond to UI interaction and fire actions that can mutate stores</li>
+                            <li class="fragment">This is where React gets to shine</li>
+                            <li class="fragment">Controller views listen and react to store events</li>
+                            <li class="fragment">They can optionally update their state, re-render themselves and their child views</li>
+                            <li class="fragment">Also, they can respond to user interaction and fire actions that will eventually mutate Stores</li>
                         </ul>
                     </section>
                 </section>
@@ -193,8 +200,8 @@
 
                     <ul>
                         <li class="fragment">Incredibly fast</li>
-                        <li class="fragment">It utilises an in-memory DOM</li>
-                        <li class="fragment">Which means a copy of your DOM is kept in memory and any changes are made in memory and updated in the DOM when needed</li>
+                        <li class="fragment">Utilises an in-memory DOM</li>
+                        <li class="fragment">Re-rendering the virtual DOM is very cheap, and updates to the real DOM are localised, only to the parts that have changed</li>
                         <li class="fragment">Events are normalised across browsers and automatically delegated</li>
                     </ul>
                 </section>
@@ -207,8 +214,8 @@
                     <ul>
                         <li class="fragment">Components can be written in pure JavaScript or what Facebook calls JSX, a JavaScript XML syntax</li>
                         <li class="fragment">Allows you to write HTML inside of JavaScript without having to wrap it in quotes</li>
-                        <li class="fragment">We've all been conditioned to separate our functionality from our view, but if you think about it, they are actually intrinsic tied to one another</li>
-                        <li class="fragment">Markup and the code that generates it are intimately tied together</li>
+                        <li class="fragment">We've all been conditioned to separate our functionality from our view, but if you think about it, they are actually intrinsically tied to one another</li>
+                        <li class="fragment">Markup, and the code that generates it are intimately connected</li>
                         <li class="fragment">Display logic is often very complex and using template languages to express it becomes cumbersome</li>
                     </ul>
                 </section>
@@ -270,9 +277,9 @@ componentDidMount() {
     var $component = $(React.findDOMNode(this));
 
     var $body = $component.closest('body');
-    var $input = $component.find('input.myTextInput');
-
     $body.css({ backgroundColor: '#000' });
+
+    var $input = $component.find('input[ref="myTextInput"]');
     $input.fadeOut(2000);
 }
                                 </code></pre>
@@ -283,7 +290,32 @@ componentDidMount() {
 
                 <!-- Browser compatibility -->
 
+                <section>
+                    <h2>Browser compatibility</h2>
+                    <ul>
+                        <li class="fragment">IE8 +</li>
+                        <li class="fragment">React is pretty good at abstracting browser differences</li>
+                        <li class="fragment">Older browsers may need polyfils</li>
+                        <li class="fragment">Although, some browsers are limited or present quirky behaviors</li>
+                    </ul>
+                </section>
+
                 <!-- Server side rendering (Isomorphic JavaScript) -->
+
+                <section>
+                    <h2>Server side rendering</h2>
+                    <h3>(Isomorphic JavaScript)</h3>
+
+                    <ul>
+                        <li class="fragment">CommonJS</li>
+                        <li class="fragment">Node</li>
+                        <li class="fragment">Browserify (Client bundle.js)</li>
+                        <li class="fragment">Share the same code</li>
+                        <li class="fragment">Increase code reuse</li>
+                        <li class="fragment">Easily done via Node express</li>
+                        <li class="fragment">Server-side solutions available in backend languages (Rails, Scala/Java, PHP)</li>
+                    </ul>
+                </section>
 
                 <!-- Who uses it? (May 2015) -->
 
