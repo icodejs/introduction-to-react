@@ -71,9 +71,9 @@
                                 Can be plugged into an existing MVC (MV*) framework e.g.
 
                                 <ul>
-                                    <li>Directives in AngularJS</li>
-                                    <li>Components in Ember</li>
-                                    <li>Backbone item views</li>
+                                    <li>AngularJS Directives</li>
+                                    <li>Ember Components</li>
+                                    <li>Backbone Item views</li>
                                 </ul>
                             </li>
                         </ul>
@@ -137,10 +137,10 @@
 
                 <section>
                     <section>
-                        <h2>How do I structure my app?</h2>
+                        <h2>How should I structure a React app?</h2>
 
                         <div class="fragment">
-                            <h3>Flux (Created by Facebook)</h3>
+                            <h3>Flux (By Facebook)</h3>
                             <p>An application architecture based on unidirectional data flow.</p>
                         </div>
                     </section>
@@ -161,7 +161,7 @@
                             <ul>
                                 <li class="fragment">A retweet</li>
                                 <li class="fragment">Follow another user in Beamly</li>
-                                <li class="fragment">Post a comment on a user's wall</li>
+                                <li class="fragment">A comment posted</li>
                                 <li class="fragment">Like an article</li>
                             </ul>
 
@@ -171,22 +171,23 @@
                     <section>
                         <h2>Dispatcher</h2>
                         <ul>
-                            <li class="fragment">There is only ever one Dispatcher, and it acts as the central hub within your application</li>
-                            <li class="fragment">Pub sub system that uses Node's Event Emitter</li>
-                            <li class="fragment">Broadcasts its payload to ALL of its registered callbacks (Stores)</li>
-                            <li class="fragment">Has no knowledge of any stores</li>
+                            <li class="fragment">Dispatcher is used to broadcast payloads to registered callbacks (Stores)</li>
+                            <li class="fragment">The dispatcher is a singleton, and operates as the central hub of data flow</li>
+                            <li class="fragment">Similar to pub-sub systems</li>
+                            <li class="fragment">Uses Node's Event Emitter</li>
+                            <li class="fragment">It is essentially a registry of callbacks, and can invoke these callbacks in order</li>
+                            <li class="fragment">When new data comes into the dispatcher, it then uses these callbacks to propagate that data to all of the Stores</li>
                         </ul>
                     </section>
 
                     <section>
                         <h2>Stores (Model like... but not)</h2>
                         <ul>
+                            <li class="fragment">Each Store registers a callback with the dispatcher</li>
+                            <li class="fragment">Updated as a result of actions</li>
                             <li class="fragment">Read-only</li>
                             <li class="fragment">Self contained universe</li>
-                            <li class="fragment">Updated as a result of actions</li>
                             <!-- <li class="fragment">Stores instead of models</li> -->
-                            <li class="fragment">Subscribes to Dispatcher events</li>
-                            <li class="fragment">State is updated via the Dispatcher events</li>
                             <li class="fragment">Emits an event when internal state changes...</li>
                         </ul>
                     </section>
@@ -200,7 +201,7 @@
                                 <span class="fragment">Parent views,</span>
                                 <span class="fragment">Child views</span>
                             </li>
-                            <li class="fragment">Controller views listen and react to store events</li>
+                            <li class="fragment">Controller views listen and react to Store events</li>
                             <li class="fragment">They can optionally update their state, <span class="fragment">re-render themselves</span> <span class="fragment">and their children</span></li>
                             <li class="fragment">Also, they can respond to user interaction and fire actions that will eventually mutate Stores...</li>
                         </ul>
@@ -225,7 +226,7 @@
                 <!-- JSX (Inline HTML - PASS ME THE SICK BUCKET!) -->
 
                 <section>
-                    <h2>JSX (In-line HTML/XML - WTF!)</h2>
+                    <h2>JSX (In-line HTML/XML - OMG!)</h2>
 
                     <ul>
                         <li class="fragment">Components can be written in pure JavaScript or what React calls JSX, <span class="fragment">a JavaScript XML syntax</span></li>
@@ -256,9 +257,9 @@
 
                     <ul>
                         <li class="fragment">Encourages reuse and abstraction</li>
-                        <li class="fragment">Similar to jQuery plugins</li>
+                        <li class="fragment">Similar to jQuery plugins...</li>
                         <li class="fragment">Can be as simple as plain HTML</li>
-                        <li class="fragment">Or as complex as HTML, Styles, JS</li>
+                        <li class="fragment">Or as complex as HTML, CSS, JS</li>
                         <li class="fragment">Can contain child components</li>
                         <li class="fragment">E.g. React Bootstrap...</li>
                     </ul>
@@ -279,12 +280,12 @@
                             <li class="fragment">
                                 You can access HTML elements, within a component using ref attributes:
                                 <pre><code data-trim contenteditable>
- <input type="text" ref="myTextInput" />
+ &lt;input type="text" ref="myTextInput" &#47;&gt;
                                 </code></pre>
                             </li>
 
                             <li class="fragment">
-                                Use the <code><em>this.refs</em></code> property to obtain a reference to it, similar to jQuery's <code><em>$(el).find('.class');</em></code> :
+                                Use <code><em>this.refs</em></code> property to obtain references to things, similar to jQuery's <code><em>$(el).find();</em></code> :
                                 <pre><code data-trim contenteditable>
 var myTextInput = this.refs.myTextInput;
                                 </code></pre>
@@ -293,7 +294,6 @@ var myTextInput = this.refs.myTextInput;
                             <li class="fragment">
                                 Actual DOM nodes are accessed using the React findDOMNode method:
                                 <pre><code data-trim contenteditable>
-var myTextInput = this.refs.myTextInput;
 var domNode = React.findDOMNode(myTextInput);
                                 </code></pre>
                             </li>
@@ -348,7 +348,6 @@ componentDidMount() {
                         <li class="fragment">IE8 +</li>
                         <li class="fragment">React is pretty good at abstracting browser differences...</li>
                         <li class="fragment">Older browsers may need polyfils</li>
-                        <li class="fragment">Although, some browsers are limited and present quirky behaviors</li>
                     </ul>
                 </section>
 
@@ -418,7 +417,7 @@ app.get('/some-conponent/:someId', function(req, res) {
                         Flipboard,
                         Imgur,
                         Khan Academy ,
-                        Netfix,
+                        Netflix,
                         Reddit,
                         The New York Times,
                         Uber,
