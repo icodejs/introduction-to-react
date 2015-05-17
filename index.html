@@ -56,13 +56,17 @@
                 <section>
                     <section>
                         <h2>What is React?</h2>
-                        <p class="fragment">Its a JavaScript Library for building User Interfaces created by Facebook</p>
+                        <div class="fragment">
+                            <p>It's a JavaScript Library for building User Interfaces.</p>
+                            <p>Created by Facebook</p>
+                        </div>
+
                     </section>
 
                     <section>
                         <ul>
                             <li>
-                                It only focuses on the view layer (V in MVC)
+                                It only focuses on the view layer (It's the <em>V</em> in MVC)
                             </li>
                             <li class="fragment">
                                 It makes no assumptions about the rest of your front-end stack
@@ -83,7 +87,7 @@
                         <ul>
                             <li>
 
-                                This comes in 3 flavours
+                                It comes in 3 flavours
                                 <ul class="fragment">
                                     <li>React JS (Web)</li>
                                     <li>React Native (iOS)</li>
@@ -109,26 +113,26 @@
                     </section>
 
                     <section>
-                        <p><strong>View:</strong> Is what's presented to the user and is how user interacts with the application.</p>
+                        <p><strong>View:</strong> What's presented to the user, and is how user interacts with the application.</p>
                     </section>
 
                     <section>
-                        <p><strong>Controller:</strong> Its the glue between the model and view. The controller updates the view when the model changes and updates the model when the user manipulates the view.</p>
+                        <p><strong>Controller:</strong> The glue between the model and view. Controllers update the view when the model changes, and update the model when the user manipulates the view.</p>
                     </section>
 
                     <section>
-                        <p><strong>Important:</strong> MVC architectures can vary significantly from its traditional definition.</p>
+                        <p><strong>Important:</strong> MVC architectures can vary significantly from this traditional definition.</p>
                     </section>
                 </section>
 
                 <!-- What React isn’t / Misconception -->
 
                 <section>
-                    <h2>Misconception (What React isn't)</h2>
+                    <h2>Misconceptions (What React isn't)</h2>
 
                     <ul>
                         <li class="fragment">Not a front-end framework</li>
-                        <li class="fragment">Not a straight alternative to Angular, Ember, Backbone</li>
+                        <li class="fragment">Not a straight alternative to Angular, Ember or Backbone</li>
                         <li class="fragment">Not a template library (like: Handlebars, Mustache, Hogan)</li>
                     </ul>
                 </section>
@@ -138,11 +142,10 @@
                 <section>
                     <section>
                         <h2>How should I structure a React app?</h2>
+                        <h3 class="fragment">Flux (By Facebook)</h3>
 
-                        <div class="fragment">
-                            <h3>Flux (By Facebook)</h3>
-                            <p>An application architecture based on unidirectional data flow.</p>
-                        </div>
+                        <p class="fragment">An application architecture based on unidirectional data flow.</p>
+                        <p class="fragment">It's more of a pattern than a formal framework.</p>
                     </section>
 
                     <section>
@@ -156,13 +159,13 @@
                             <li class="fragment">Think of actions as Newspapers, reporting on something that happened in the world</li>
                             <!-- <li class="fragment">Not elaborate setters</li> -->
                             <li class="fragment">Represent mutations in you application state</li>
-                            <li class="fragment">Types of actions:
+                            <li class="fragment">Action examples:
 
                             <ul>
-                                <li class="fragment">A retweet</li>
-                                <li class="fragment">Follow another user in Beamly</li>
+                                <li class="fragment">A tweet is retweeted</li>
+                                <li class="fragment">A user is followed in Beamly</li>
                                 <li class="fragment">A comment posted</li>
-                                <li class="fragment">Like an article</li>
+                                <li class="fragment">An article is liked</li>
                             </ul>
 
                             </li>
@@ -171,11 +174,11 @@
                     <section>
                         <h2>Dispatcher</h2>
                         <ul>
-                            <li class="fragment">Dispatcher is used to broadcast payloads to registered callbacks (Stores)</li>
-                            <li class="fragment">The dispatcher is a singleton, and operates as the central hub of data flow</li>
+                            <li class="fragment">Used to broadcast payloads to registered callbacks (Stores)</li>
+                            <li class="fragment">A singleton, and operates as the central hub for data flow</li>
                             <li class="fragment">Similar to pub-sub systems</li>
                             <li class="fragment">Uses Node's Event Emitter</li>
-                            <li class="fragment">It is essentially a registry of callbacks, and can invoke these callbacks in order</li>
+                            <li class="fragment">It's essentially a registry of callbacks</li>
                             <li class="fragment">When new data comes into the dispatcher, it then uses these callbacks to propagate that data to all of the Stores</li>
                         </ul>
                     </section>
@@ -203,7 +206,7 @@
                             </li>
                             <li class="fragment">Controller views listen and react to Store events</li>
                             <li class="fragment">They can optionally update their state, <span class="fragment">re-render themselves</span> <span class="fragment">and their children</span></li>
-                            <li class="fragment">Also, they can respond to user interaction and fire actions that will eventually mutate Stores...</li>
+                            <li class="fragment">Also, they can respond to user interaction, and fire actions that will eventually mutate Stores...</li>
                         </ul>
                     </section>
                 </section>
@@ -212,11 +215,11 @@
 
                 <section>
                     <h2>Virtual DOM (HOW AND WHY)</h2>
-
+                    <p class="fragment">An in-memory presentation of the real DOM, that allows you to keep expensive writes to the DOM to a minimum.</p>
                     <ul>
                         <li class="fragment">Incredibly fast</li>
-                        <li class="fragment">Utilises an in-memory DOM</li>
                         <li class="fragment">Re-rendering is very cheap</li>
+                        <li class="fragment">DOM manipulations are batched</li>
                         <li class="fragment">Updates to the real DOM are localised only to the parts that changed</li>
                         <li class="fragment">Events are normalised across browsers</li>
                         <li class="fragment">Events are automatically delegated for you...</li>
@@ -226,15 +229,22 @@
                 <!-- JSX (Inline HTML - PASS ME THE SICK BUCKET!) -->
 
                 <section>
-                    <h2>JSX (In-line HTML/XML - OMG!)</h2>
+                    <section>
+                        <h2>JSX (In-line HTML/XMLS - OMG!)</h2>
 
-                    <ul>
-                        <li class="fragment">Components can be written in pure JavaScript or what React calls JSX, <span class="fragment">a JavaScript XML syntax</span></li>
-                        <li class="fragment">Allows you to write a HTML 'like' syntax inside your JS files, <span class="fragment">which is compiled down to regular JavaScript</span></li>
-                        <li class="fragment">We've all been conditioned to separate our functionality from our views, <span class="fragment">but if you think about it, they are actually intrinsically linked</span></li>
-                        <li class="fragment">Markup, and the code that generates it, are intimately connected</li>
-                        <li class="fragment">Display logic is often very complex and using a template languages to express it, becomes cumbersome...</li>
-                    </ul>
+                        <p class="fragment">React components contain the mark-up (JSX/HTML) necessary for rendering themselves.</p>
+
+                        <ul>
+                            <li class="fragment">Components can be written in pure JavaScript or what React calls JSX, <span class="fragment">a JavaScript XML syntax</span></li>
+                            <li class="fragment">Allows you to write a HTML 'like' syntax inside your JS files, <span class="fragment">which is compiled down to regular JavaScript</span></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <p>We've all been conditioned to separate our functionality from our views, <span class="fragment">but if you think about it, they are actually intrinsically linked.</span></p>
+                        <p class="fragment">Markup, and the code that generates it, are intimately connected.</p>
+                        <p class="fragment">Display logic is often very complex, and using a templating language to express it, becomes cumbersome as the application grows in size...</p>
+                    </section>
                 </section>
 
                 <!-- Components -->
@@ -245,8 +255,9 @@
                     <p class="fragment">
                         Possible examples:
                         <span class="fragment">Like buttons,</span>
-                        <span class="fragment">Form fields,</span>
+                        <span class="fragment">Nav bar,</span>
                         <span class="fragment">Beamly user wall,</span>
+                        <span class="fragment">Feed item,</span>
                         <span class="fragment">Tweet,</span>
                         <!-- <span class="fragment">Layout components,</span> -->
                         <span class="fragment">Image upload,</span>
@@ -269,7 +280,7 @@
 
                 <section>
                     <section>
-                        <h2>How do I traverse the DOM / Virtual DOM</h2>
+                        <h2>How can I traverse the DOM / Virtual DOM</h2>
 
                         <blockquote class="fragment">"React encourages the creation of small self-contained components. If you're attempting to traverse the DOM, outside of your component, you're probably doing something wrong!"</blockquote>
                     </section>
@@ -301,7 +312,7 @@ var domNode = React.findDOMNode(myTextInput);
                     </section>
 
                     <section>
-                        <p>Once the component has loaded into the DOM, jQuery can be used as normal:</p>
+                        <p>Once a component has been loaded into the DOM, it's possible to use jQuery if necessary:</p>
 
 
                         <pre class="fragment"><code data-trim contenteditable>
@@ -322,7 +333,7 @@ componentDidMount() {
                     </section>
 
                     <section>
-                        <p>Or... use component as starting point via <code><em>this</em></code>:</p>
+                        <p>Or... use a component as starting point via <code><em>this</em></code>:</p>
 
                         <pre class="fragment"><code data-trim contenteditable>
 componentDidMount() {
@@ -360,11 +371,11 @@ componentDidMount() {
 
                         <ul>
                             <li class="fragment">CommonJS on both client and server</li>
-                            <li class="fragment">Node (Flat server / Fat client)</li>
+                            <li class="fragment">Node (Fat server / Fat client)</li>
                             <li class="fragment">More shared code (Increases code reuse)</li>
                             <li class="fragment">Browserify (compile JSX, ES6 to ES5, create bundle.js)</li>
                             <li class="fragment">Easily achievable using Node express</li>
-                            <li class="fragment">Server-side solutions available in backend languages (Rails, Scala/Java, PHP)</li>
+                            <li class="fragment">Server-side solutions available in backend languages like Ruby Rails, Scala, Java, PHP</li>
                         </ul>
                     </section>
                     <section>
@@ -391,7 +402,7 @@ var appComponent = require('../public/js/components/app');
 var ReactApp = React.createFactory(appComponent);
 var app = express();
 
-app.get('/some-conponent/:someId', function(req, res) {
+app.get('/some-conponent/:id', function(req, res) {
     var html = React.renderToString(
         ReactApp()
     );
@@ -457,7 +468,7 @@ app.get('/some-conponent/:someId', function(req, res) {
                         <h2>Final words</h2>
                         <ul>
                             <li class="fragment">React is very simple (V in MVC)</li>
-                            <li class="fragment">Introduces a new way of thinking, <span class="fragment">even if it feels dirty at first</span></li>
+                            <li class="fragment">Encourages an alternative way of thinking, <span class="fragment">even if it feels dirty at first</span></li>
                             <li class="fragment">Isomorphic JavaScript</li>
                             <li class="fragment">Encourages ES6 (Reactify, Browserify, Babel)</li>
                             <li class="fragment">Combine with Flux for unidirectional data flow</li>
