@@ -72,12 +72,12 @@
                                 It makes no assumptions about the rest of your front-end stack
                             </li>
                             <li class="fragment">
-                                Can be plugged into an existing MVC (MV*) framework e.g.
+                                Can be plugged into an existing MVC (MV*) framework like:
 
-                                <ul>
-                                    <li>AngularJS Directives</li>
-                                    <li>Ember Components</li>
-                                    <li>Backbone Item views</li>
+                                <ul class="fragment">
+                                    <li>Angular</li>
+                                    <li>Ember</li>
+                                    <li>Backbone</li>
                                 </ul>
                             </li>
                         </ul>
@@ -113,7 +113,7 @@
                     </section>
 
                     <section>
-                        <p><strong>View:</strong> What's presented to the user, and is how user interacts with the application.</p>
+                        <p><strong>View:</strong> What's presented to the user, and is how a user interacts with the application.</p>
                     </section>
 
                     <section>
@@ -156,7 +156,7 @@
                     <section>
                         <h2>Actions (Not DOM events)</h2>
                         <ul>
-                            <li class="fragment">Think of actions as Newspapers, reporting on something that happened in the world</li>
+                            <li class="fragment">Think of Actions as Newspapers, reporting on something that happened in the world</li>
                             <!-- <li class="fragment">Not elaborate setters</li> -->
                             <li class="fragment">Represent mutations in you application state</li>
                             <li class="fragment">Action examples:
@@ -179,16 +179,18 @@
                             <li class="fragment">Similar to pub-sub systems</li>
                             <li class="fragment">Uses Node's Event Emitter</li>
                             <li class="fragment">It's essentially a registry of callbacks</li>
-                            <li class="fragment">When new data comes into the dispatcher, it then uses these callbacks to propagate that data to all of the Stores</li>
+                            <li class="fragment">When new data comes into the Dispatcher, it then uses these callbacks to propagate that data to all of the Stores</li>
                         </ul>
                     </section>
 
                     <section>
                         <h2>Stores (Model like... but not)</h2>
                         <ul>
-                            <li class="fragment">Each Store registers a callback with the dispatcher</li>
-                            <li class="fragment">Updated as a result of actions</li>
+                            <li class="fragment">Contain your application state</li>
+                            <li class="fragment">They should be your single source of truth</li>
+                            <li class="fragment">Each Store registers a callback with the Dispatcher</li>
                             <li class="fragment">Read-only</li>
+                            <li class="fragment">Updated as a result of Actions</li>
                             <li class="fragment">Self contained universe</li>
                             <!-- <li class="fragment">Stores instead of models</li> -->
                             <li class="fragment">Emits an event when internal state changes...</li>
@@ -206,7 +208,7 @@
                             </li>
                             <li class="fragment">Controller views listen and react to Store events</li>
                             <li class="fragment">They can optionally update their state, <span class="fragment">re-render themselves</span> <span class="fragment">and their children</span></li>
-                            <li class="fragment">Also, they can respond to user interaction, and fire actions that will eventually mutate Stores...</li>
+                            <li class="fragment">Also, they can respond to user interaction, and fire Actions that will eventually mutate Stores...</li>
                         </ul>
                     </section>
                 </section>
@@ -215,7 +217,7 @@
 
                 <section>
                     <h2>Virtual DOM (HOW AND WHY)</h2>
-                    <p class="fragment">An in-memory presentation of the real DOM, that allows you to keep expensive writes to the DOM to a minimum.</p>
+                    <p class="fragment">An in-memory presentation of the real DOM, that allows you to keep expensive writes to the DOM, to a minimum.</p>
                     <ul>
                         <li class="fragment">Incredibly fast</li>
                         <li class="fragment">Re-rendering is very cheap</li>
